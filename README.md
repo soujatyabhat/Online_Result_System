@@ -2,7 +2,7 @@
 Online Result Uploading System using PHP & MySQL
 It is used to check annual result in online.
 
-Video link : https://www.linkedin.com/posts/soujatya-bhattacharya-2000_php-mysql-miniprogram-activity-6750611640099618816-Ss39
+Video link : https://bit.ly/3pEn2wx
 
 # How to use
 <ul>
