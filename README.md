@@ -4,7 +4,7 @@ It is used to check annual result in online.
 
 Video link : 
 
-#How to use
+# How to use
 <ul>
   <li> Start Apache & MySQL Server </li>
   <li> Clone the git copy in htdocs directory </li>
