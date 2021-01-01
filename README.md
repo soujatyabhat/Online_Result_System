@@ -1,5 +1,5 @@
-# Online_Result_System
-Online Result Uploading System using PHP & MySQL
+# Online Result System
+Online Result System using PHP & MySQL
 It is used to check annual result in online.
 
 Video link : https://bit.ly/3pEn2wx
@@ -21,4 +21,6 @@ Video link : https://bit.ly/3pEn2wx
 
 # Output page (result.php)
 <img src = "demo/demo 3.png" alt = "no">
+
+<strong> <p> Project Develped By : Soujatya Bhattacharya </p> </strong>
 
