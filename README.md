@@ -14,4 +14,5 @@ Video link : https://bit.ly/3pEn2wx
  </ul>
   
 # Marks uploading page (index.php)
+<img src = "demo1.jpg">
 
