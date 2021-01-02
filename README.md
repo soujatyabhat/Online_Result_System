@@ -22,5 +22,8 @@ Video link : https://bit.ly/3pEn2wx
 # Output page (result.php)
 <img src = "demo/demo 3.png" alt = "no">
 
+# Database View (umarks.sql)
+<img src = "demo/demo 4.png" alt = "no">
+
 <strong> <p> Project Develped By : Soujatya Bhattacharya </p> </strong>
 
