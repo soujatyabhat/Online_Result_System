@@ -8,7 +8,7 @@ Video link : https://bit.ly/3pEn2wx
 <ul>
   <li> Start Apache & MySQL Server </li>
   <li> Clone the git copy in htdocs directory </li>
-  <li> Create a table "test" in MySQL Database </li>
+  <li> Create a database "test" in MySQL Database </li>
   <li> Recover the table "umarks.sql" on "test" database </li>
   <li> Execute <b> "index.php > search.php > result.php" </b> </li>
  </ul>
