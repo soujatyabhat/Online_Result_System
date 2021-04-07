@@ -11,74 +11,82 @@
     <style>
         body
         {
-            background-image: linear-gradient(white,#ccff33,#00e600);
+            background-image: linear-gradient(#ffff99,#ff6600);
             height: 925px;
-           
-            
         }
         h1
         {
             text-align: center;
-            color:blue;
+            color: black;
             text-shadow: 2px 2px white;
             font-size: 70px;
         }
+        p
+        {
+            text-align: center;
+            color : red;
+            font-weight: 900;
+            text-shadow: 2px 2px white;
+        }
+
         form
-        {   margin-top:2%;
-            background-image: linear-gradient(white,#ff6600);
-            padding: 10px 10px;
+        {   
+            margin-top:2%;
+            background-color:	 #88cc00;
+            padding: 30px 10px;
             width: 450px;
             margin-left:37%;
-            border:5px solid  black;
-            border-radius: 15px;
+            border:2px solid black;
+            box-shadow: 2px 5px white;
+            border-radius: 5px;
         }
         select
         {
             width: 150px;
         }
-        p{
-            font-weight:bold;
- 			 text-shadow: 2px 2px white;
- 			 font-size:30px;
- 			 text-align:center;
- 			 
+        #l
+        {
+            font-size: 20px;
         }
-        
+        #c
+        {
+            font-size: 30px;
+        }
+        .b{
+            padding:10px 16px;
+             width:300px;
+             
+             font-size: 50px;
+             border-radius:10px;
+        }
         .block {
-                display: block;
-                width: 20%;
-                border: none;
-                background-color: black;
-                color: white;
-                padding:8px 2px;
-                font-size: 16px;
-                cursor: pointer;
-                text-align: center;
-                margin-left:38%;
-                border-radius: 15px;
+               
                 }
 
          .block:hover {
-                background-color:white;
-                color: black;
+            background-color: black;
+                color: white;
                 }
     </style>
+ 
+
 </head>
 <body>
 <center>
 <img src = "logo.png" width = "120px" height="150px">   
-</center>
-    <h1> Anybody Public High School  </h1>
-    <br>
-    <form>
-    <p>For Adimn login:</p>
 
-	
-     <a class="block" href="/Online_Result_System/adminlogin.php">Admin</a>
-        
-    <p>For Student login:</p>
-	<a class="block" href="/Online_Result_System/studentlogin.php">Student</a>
-    </form>
-    
+    <h1> Anybody Public High School  </h1>
+    <?php
+      session_start();
+      if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] = true){
+      echo '<h2 >NAME :'.' '. $_SESSION['name'].'</h2>';
+      echo '<h2 >ROLL :'.' '. $_SESSION['roll'].'</h2>';
+      echo '<h2 >CLASS :'.' '. $_SESSION['class'].'</h2>';
+}
+?>
+<br><br><br>
+<a class="bloc" href="/Online_Result_System/search.php" style = "background-color:black; padding:20px 56px;  border-radius: 40px; color:white;" >Back</a>
+</center>
+
 </body>
 </html>

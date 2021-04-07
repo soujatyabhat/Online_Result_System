@@ -24,27 +24,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `umarks`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `umarks` (
-  `roll` bigint(10) NOT NULL,
-  `name` longtext DEFAULT NULL,
-  `class` longtext DEFAULT NULL,
-  `bng` int(10) DEFAULT NULL,
-  `eng` int(10) DEFAULT NULL,
-  `sci` int(10) DEFAULT NULL
+CREATE TABLE `admin` (
+  `slno` int(11) NOT NULL,
+  `username` varchar(11) NOT NULL,
+  `password` int(23) NOT NULL,
+  `tstamp` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`slno`, `username`, `password`, `tstamp`) VALUES
+(2, 'abhi', 123, '2021-03-10 12:27:11'),
+(3, 'rahul', 1234, '2021-03-10 12:57:29'),
+(4, 'souvik', 1234, '2021-03-10 15:28:44');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `umarks`
+-- Indexes for table `admin`
 --
-ALTER TABLE `umarks`
-  ADD PRIMARY KEY (`roll`);
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`slno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `slno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
