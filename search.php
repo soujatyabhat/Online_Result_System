@@ -11,12 +11,14 @@
     <style>
         body
         {
-            background-color: rgb(172, 227, 52);
+            background-image: linear-gradient(#ff4dff, black);
+            height: 925px;
         }
         h1
         {
             text-align: center;
-            color:rgb(201, 59, 30);
+            color: black;
+            text-shadow: 2px 2px white;
             font-size: 70px;
         }
         p
@@ -24,29 +26,70 @@
             text-align: center;
             color : red;
             font-weight: 900;
+            text-shadow: 2px 2px white;
         }
+
         form
-        {
-            background-color: gold;
+        {   
+            margin-top:2%;
+            background-color:	 #88cc00;
             padding: 30px 10px;
-            width: 430px;
-            margin-left:34%;
-            border:2px dotted;
+            width: 450px;
+            margin-left:37%;
+            border:2px solid black;
+            box-shadow: 2px 5px white;
+            border-radius: 5px;
         }
         select
         {
             width: 150px;
         }
+        #l
+        {
+            font-size: 20px;
+        }
+        #c
+        {
+            font-size: 30px;
+        }
+        .b{
+            padding:10px 16px;
+             width:300px;
+             
+             font-size: 50px;
+             border-radius:10px;
+        }
+        .block {
+                display: inline-block;
+                margin-top:80px;
+               
+                width:300px;
+                background-color:#66cc00;
+                color: black;
+                border: none;
+                padding:55px 2px;
+                font-size: 46px;
+                cursor: pointer;
+                text-align: center;
+                border-radius: 15px;
+                }
+
+         .block:hover {
+            background-color: black;
+                color: white;
+                }
     </style>
+
 
     <?php
         if (isset($_REQUEST['submit']))
         {
+            
             //Basic Details
-            $roll = htmlentities($_REQUEST['roll']);
-            $class = htmlentities($_REQUEST['class']);
+           // $roll = htmlentities($_REQUEST['roll']);
+           // $class = htmlentities($_REQUEST['class']);
 
-            header("location:result.php?roll=$roll&class=$class");
+           // header("location:result.php?roll=$roll&class=$class");
         }
     ?>
 </head>
@@ -55,29 +98,63 @@
 <img src = "logo.png" width = "120px" height="150px">   
 </center>
     <h1> Anybody Public High School  </h1>
-    <p> Seach Annual Score </p>
+
+<center>
+  <a class="block" href="/Online_Result_System/info.php" >Student info</a>
+  <a class="block" href="/Online_Result_System/notice.php" style = "margin-left:3%;"  >Notice</a>
+  <a class="block" href="/Online_Result_System/result.php" style = "margin-left:3%;"  >Result</a>
+
+  <br><br><br><br><br>
+  <a href = "index.php" style = "color:red;font-weight:bold;font-size: 30px; " >Home </a> 
+  <a href = "studentlogin.php" style = "color:red;font-weight:bold;font-size: 30px; margin-left:3%;" >student-login </a>   
+  <a href = "studentlogin.php" style = "color:red;font-weight:bold;font-size: 30px;margin-left:3%;margin-right:2%  " >Back </a>  
+   
+  
+  
+</center>
+
+
+
+    <!--
+    <p style = "color:black;font-weight:bold;font-size: 25px;"> Seach Annual Score </p>
     <div class = "container">
     <form action = "" method = "POST">
         <div>
-        <caption> <strong> <u> Basic Info </u> </strong></caption>
+        <caption> <strong id="c"> <u> Basic Info </u> </strong></caption>
         <br> <br>
-            <label for = "roll"> Roll :  </label> <input type = "number" name = "roll" required>
+            <label for = "roll" id="l"> Roll :  </label> <input type = "number" name = "roll" required>
         </div>
             <br>
-            <label for = "class"> Class:  </label>
+            <label for = "class" id="l"> Class:  </label> <input type="text" id="fname" name="class" size="30">
             <select name = "class">
                 <option readonly></option>
+                <option>5A</option>
+                <option>5B</option>
                 <option>6A</option>
                 <option>6B</option>
-            </select>
+                <option>7A</option>
+                <option>7B</option>
+                <option>8A</option>
+                <option>8B</option>
+                <option>9A</option>
+                <option>9B</option>
+                <option>10A</option>
+                <option>10B</option>
+                <option>11A</option>
+                <option>11B</option>
+                <option>12A</option>
+                <option>12B</option>
+            </select>  
             <br> <br>
             <center>
-                 <button type = "submit" style = "background-color:#32CD32;" name = "submit"> Search </button> 
-                 <button type = "reset" style = "background-color:red;" name = "reset"> Reset </button>
+                 <button type = "submit" style = "background-color:#32CD32; padding:4px 6px; width:90px;" name = "submit"> Search </button> 
+                 <button type = "reset" style = "background-color:red;padding:4px 6px; width:90px;" name = "reset"> Reset </button>
             </center>
+            <a href = "index.php" style = "color:red;font-weight:bold;font-size: 20px;" >Home </a> 
             </div>
         </div>
     </form>
     </div>
+    -->
 </body>
 </html>

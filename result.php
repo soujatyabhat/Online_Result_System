@@ -8,26 +8,56 @@
     <style>
         body
         {
-            background-color: rgb(15, 209, 209);
+            height: 920px;
+            background-image: linear-gradient(white,#99ff33,#00ff00);
+
         }
         h1
         {
             text-align: center;
             color:rgb(156, 79, 2);
             font-size: 70px;
+            text-shadow: 2px 2px white;
         }
-        form
+        a
         {
-            background-color: cyan;
-            padding: 30px 10px;
-            width: 430px;
-            margin-left:32%;
-            border:2px dotted;
+            display: inline-block;
+            color:red;
+            font-size: 30px;
+            text-shadow: 2px 2px white;
+        }
+        table
+        {
+            background-image: linear-gradient(red, yellow);
+            width:900px;
+
+        }
+        .container{
+            margin-left:43%;
+            font-size: 30px;
+
+        }
+
         }
         select
         {
             width: 150px;
         }
+        #a{
+ 			 font-weight:bold;
+ 			 text-shadow: 2px 2px white;
+ 			 font-size:30px;
+ 			 text-align:center;
+ 			 box-shadow: 2px 2px white;
+
+			}
+		  #b{
+ 			 font-weight:bold;
+ 			 text-shadow: 2px 2px white;
+ 			 font-size:25px;
+ 			 text-align:center;
+ 			 box-shadow: 2px 2px white;
+			}
     </style>
 </head>
 <body>
@@ -49,9 +79,13 @@ function grade($avg)
         $grade = "D";
 return $grade;
 }
-
-$roll =  htmlentities($_GET['roll']);
-$class =  htmlentities($_GET['class']);
+session_start();
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] = true)
+$roll=$_SESSION['roll'];
+$name=$_SESSION['name'];
+$class=$_SESSION['class'];
+//$roll =  htmlentities($_GET['roll']);
+//$class =  htmlentities($_GET['class']);
 //Query & retriving data from database
 $query = "SELECT * FROM umarks WHERE roll = '$roll' AND class = '$class'";
 $result = mysqli_query($con,$query);
@@ -59,7 +93,7 @@ $count = mysqli_num_rows($result);
 ?>
 <table border = "2" cellspacing = "3" cellpadding = "3" align = "center" width = "500px" height = "100px" bgcolor = "cyan" bordercolor="red">
 <tr>
-        <th> Bengali </th> <th> English</th> <th> Science </th> <th> Total </th> <th> Avg </th> <th> Grade </th>
+        <th id="a"> Bengali </th> <th id="a"> English</th> <th id="a"> Science </th> <th id="a"> Total </th> <th id="a"> Avg </th> <th id="a"> Grade </th>
 </tr>
 <?php
 if($count > 0) 
@@ -69,14 +103,18 @@ if($count > 0)
     $avg = $sum / 3;
 ?>
 <b>
+<div class="container">
 <?php echo "Name : ". $row['name']?>
 <br>
 <?php echo "Roll : ". $row['roll']?>
 <br>
 <?php echo "Class : ". $row['class']?>
-</b>
+</div>
+</b><br>
+
+
     <tr align = "center">
-        <td> <?php echo $row['bng'] ?> </td> <td> <?php echo $row['eng'] ?> </td> <td> <?php echo $row['sci'] ?> </td> <td> <?php echo $sum ?> </td> <td> <?php echo round($avg) ?></td> <td> <?php echo grade($avg) ?></td>
+        <td id="b"> <?php echo $row['bng'] ?> </td> <td id="b"> <?php echo $row['eng'] ?> </td> <td id="b"> <?php echo $row['sci'] ?> </td> <td id="b"> <?php echo $sum ?> </td> <td id="b"> <?php echo round($avg) ?></td> <td id="b"> <?php echo grade($avg) ?></td>
     </tr>
 </table>
 <?php
@@ -92,9 +130,13 @@ else
 }
 mysqli_close($con);
 ?>
-<br>
-<ul>
-    <li> <a href = "search.php"> Click here to seach another </a> </li>
-</ul>
+<br><br><br>
+<!--for new search-->
+<center>
+<a href = "studentlogin.php" style = "color:black;font-weight:bold;font-size: 30px;margin-right:2% ">Search New </a>
+<a href = "index.php" style = "color:black;font-weight:bold;font-size: 30px; margin-left:2%;" >Home </a> 
+<a href = "search.php" style = "color:black;font-weight:bold;font-size: 30px;margin-left:4%;margin-right:2%  " >Back </a> 
+ </center>    
+
 </body>
 </html>

@@ -24,27 +24,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `umarks`
+-- Table structure for table `notice`
 --
 
-CREATE TABLE `umarks` (
-  `roll` bigint(10) NOT NULL,
-  `name` longtext DEFAULT NULL,
-  `class` longtext DEFAULT NULL,
-  `bng` int(10) DEFAULT NULL,
-  `eng` int(10) DEFAULT NULL,
-  `sci` int(10) DEFAULT NULL
+CREATE TABLE `notice` (
+  `slno` int(11) NOT NULL,
+  `desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`slno`, `desc`) VALUES
+(1, 'ALL EXAM STARTS FROM 17 MARCH'),
+(7, 'your exam will end 12app');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `umarks`
+-- Indexes for table `notice`
 --
-ALTER TABLE `umarks`
-  ADD PRIMARY KEY (`roll`);
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`slno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `notice`
+--
+ALTER TABLE `notice`
+  MODIFY `slno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
